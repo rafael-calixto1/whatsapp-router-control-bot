@@ -1,0 +1,58 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - resetar_670v9
+  - configurar_670v9
+
+
+responses:
+  utter_executando_reset:
+    - text: "🔄 Executando o reset do 670V9..."
+
+  utter_greet:
+    - text: "Ola"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_resetar_670v9_script
+  - action_resetar_670v9_inicio
+  - action_resetar_670v9_login
+  - action_resetar_670v9_navegar_menu
+  - action_resetar_670v9_abrir_config
+  - action_resetar_670v9_upload_config
+  - action_resetar_670v9_confirmar
+  - action_resetar_670v9_finalizar
+  - action_configurar_670v9_inicio
+  - action_configurar_670v9_login
+  - action_configurar_670v9_sair_quick
+  - action_configurar_670v9_navegar_menu
+  - action_configurar_670v9_abrir_config
+  - action_configurar_670v9_upload_config
+  - action_configurar_670v9_confirmar
+  - action_configurar_670v9_finalizar
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

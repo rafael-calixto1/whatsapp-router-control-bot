@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^16.3.1",
+    "puppeteer": "^24.7.2",
+    "venom-bot": "^5.3.0"
+  },
+  "name": "routercontrol-bot",
+  "version": "1.0.0",
+  "description": "A WhatsApp bot to control and configure ZTE-F670LV9.0 routers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "router",
+    "automation",
+    "zte",
+    "rasa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
