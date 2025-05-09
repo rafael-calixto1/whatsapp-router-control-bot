@@ -17,7 +17,7 @@ load_dotenv()
 device_url = os.getenv('ROUTER_URL', 'http://192.168.1.1')
 username = os.getenv('ROUTER_CONFIG_USERNAME', 'multipro')
 password = os.getenv('ROUTER_CONFIG_PASSWORD', 'multipro')
-config_file_path = os.getenv('CONFIG_FILE_PATH', '/home/rafael/Desktop/NOC/roteadores/ZTE-F670LV9.0/670config.bin')
+config_file_path = os.getenv('CONFIG_FILE_PATH', '/home/rafael/Desktop/NOC/roteadores/ZTE-F670LV9.0/config.bin')
 gecko_driver_path = os.getenv('GECKO_DRIVER_PATH', '/usr/bin/geckodriver')
 headless = os.getenv('SELENIUM_HEADLESS', 'true').lower() == 'true'
 
