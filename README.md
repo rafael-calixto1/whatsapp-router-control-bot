@@ -22,7 +22,7 @@ A WhatsApp bot built with Venom-bot and Rasa to control and configure ZTE-F670LV
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/conexao-bot.git
-   cd conexao-bot/whatsapp2
+   cd whatsapp-router-control-bot
    ```
 
 2. Install Rasa dependencies:
