@@ -84,7 +84,7 @@ class ActionLerSinalOptico(Action):
             tx_title = tx_element.get_attribute("title")
 
             if rx_title == "-40" or rx_element.text.strip() == "--":
-                dispatcher.utter_message("📉 Sinal óptico: LOS (Loss of Signal).")
+                dispatcher.utter_message("📉 Sinal óptico: LOS (Loss of Signal)\n⚠️Verificar fibra, conector e acoplador.")
             else:
                 try:
                     rx_power = float(rx_title)
