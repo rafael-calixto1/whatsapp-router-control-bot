@@ -52,6 +52,7 @@ actions:
   - action_configurar_670v9_upload_config
   - action_configurar_670v9_confirmar
   - action_configurar_670v9_finalizar
+  - action_ler_sinal_optico
 
 session_config:
   session_expiration_time: 60
