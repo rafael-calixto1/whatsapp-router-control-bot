@@ -20,3 +20,5 @@ from .configurar_670v9 import (
     ActionConfigurar670v9Confirmar,
     ActionConfigurar670v9Finalizar,
 )
+
+from .resetar_670lv1 import ActionRestaurarConfig670LV1

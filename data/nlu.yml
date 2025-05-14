@@ -5,6 +5,11 @@ nlu:
   examples: |
       - v9
 
+- synonym: 670LV1
+  examples: |
+      - lv1
+      - v1
+      - 670L
 - synonym: resetar
   examples: |
       - reset
@@ -126,5 +131,19 @@ nlu:
     - 670V9 configurar
     - configurar 670V9
     - jogar config do 670V9
+
+- intent: resetar_670lv1
+  examples: |
+    - quero resetar o 670LV1
+    - resetar o 670LV1
+    - pode fazer o reset do 670LV1?
+    - reset do 670LV1
+    - 670LV1 resetar
+    - reset 670LV1
+    - resetar 670LV1
+    - reset lv1
+    - reset v1
+    - resetar lv1
+    - resetar v1
 
 

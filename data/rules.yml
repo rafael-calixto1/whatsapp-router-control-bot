@@ -17,6 +17,11 @@ rules:
   - intent: resetar_670v9
   - action: action_resetar_670v9_inicio
 
+- rule: Reset 670LV1 Router
+  steps:
+  - intent: resetar_670lv1
+  - action: action_restaurar_config_670lv1
+
 - rule: Configure 670v9 Router
   steps:
   - intent: configurar_670v9

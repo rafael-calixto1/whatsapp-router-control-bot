@@ -10,6 +10,7 @@ intents:
   - bot_challenge
   - resetar_670v9
   - configurar_670v9
+  - resetar_670lv1
 
 
 responses:
@@ -53,6 +54,7 @@ actions:
   - action_configurar_670v9_confirmar
   - action_configurar_670v9_finalizar
   - action_ler_sinal_optico
+  - action_restaurar_config_670lv1
 
 session_config:
   session_expiration_time: 60
