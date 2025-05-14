@@ -56,6 +56,54 @@ class ActionRestaurarConfig670LV1(Action):
             dispatcher.utter_message("🔄 Mudando para o frame correto...")
             driver_global.switch_to.frame(1)
 
+            # LEITURA DO PON SERIAL NUMBER
+            try:
+                pon_serial_element = WebDriverWait(driver_global, 10).until(
+                    EC.presence_of_element_located((By.ID, "Frm_PonSerialNumber"))
+                )
+                pon_serial = pon_serial_element.text
+                dispatcher.utter_message(f"🔢 PON Serial Number: {pon_serial}")
+            except Exception as e:
+                dispatcher.utter_message(f"⚠️ Não foi possível ler o PON Serial Number: {str(e)}")
+
+            # LEITURA DO SINAL ÓPTICO
+            # Click on Network Interface
+            dispatcher.utter_message("📡 Acessando informações do sinal óptico...")
+            interface_menu = WebDriverWait(driver_global, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//tr[@class='h2_content' and contains(@onclick, 'smWanStatu')]"))
+            )
+            driver_global.execute_script("arguments[0].click();", interface_menu)
+
+            # Click on PON Information
+            pon_info_menu = WebDriverWait(driver_global, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//tr[@class='h3' and contains(@onclick, 'pon_status_link_info_t')]"))
+            )
+            driver_global.execute_script("arguments[0].click();", pon_info_menu)
+
+            # Wait for the page to load and read signal values
+            time.sleep(2)
+            
+            # Read RxPower
+            rx_power_element = WebDriverWait(driver_global, 10).until(
+                EC.presence_of_element_located((By.ID, "Fnt_RxPower"))
+            )
+            rx_power = rx_power_element.text
+            
+            # Read TxPower
+            tx_power_element = driver_global.find_element(By.ID, "Fnt_TxPower")
+            tx_power = tx_power_element.text
+            
+            # Calculate RX - TX
+            try:
+                rx_value = float(rx_power)
+                tx_value = float(tx_power)
+                true_tx_value = rx_value - tx_value
+                dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {true_tx_value} dBm")
+            except ValueError:
+                # If conversion fails, just show the original values
+                dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {tx_power} dBm")
+
+            # CONTINUAÇÃO DO PROCESSO DE RESTAURAÇÃO
             # Expand Administration menu
             dispatcher.utter_message("🔎 Clicando no menu 'Administração' para expandir...")
             admin_font = WebDriverWait(driver_global, 10).until(
