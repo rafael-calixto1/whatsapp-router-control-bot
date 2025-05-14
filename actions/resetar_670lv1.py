@@ -50,10 +50,8 @@ class ActionRestaurarConfig670LV1(Action):
             dispatcher.utter_message("🔐 Login realizado com sucesso...")
             
             time.sleep(2)
-            dispatcher.utter_message("⏳ Aguardando carregamento da interface...")
             
             # Switch to frame 1
-            dispatcher.utter_message("🔄 Mudando para o frame correto...")
             driver_global.switch_to.frame(1)
 
             # LEITURA DO PON SERIAL NUMBER
@@ -93,19 +91,22 @@ class ActionRestaurarConfig670LV1(Action):
             tx_power_element = driver_global.find_element(By.ID, "Fnt_TxPower")
             tx_power = tx_power_element.text
             
-            # Calculate RX - TX
-            try:
-                rx_value = float(rx_power)
-                tx_value = float(tx_power)
-                true_tx_value = rx_value - tx_value
-                dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {true_tx_value} dBm")
-            except ValueError:
-                # If conversion fails, just show the original values
-                dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {tx_power} dBm")
+            # Check for LOS (Loss of Signal)
+            if rx_power == "--":
+                dispatcher.utter_message("📉 Sinal óptico: LOS (Loss of Signal)\n⚠️ Verificar fibra, conector e acoplador.")
+            else:
+                # Calculate RX - TX
+                try:
+                    rx_value = float(rx_power)
+                    tx_value = float(tx_power)
+                    true_tx_value = rx_value - tx_value
+                    dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {true_tx_value} dBm")
+                except ValueError:
+                    # If conversion fails, just show the original values
+                    dispatcher.utter_message(f"📊 Sinal óptico - RX: {rx_power} dBm | TX: {tx_power} dBm")
 
             # CONTINUAÇÃO DO PROCESSO DE RESTAURAÇÃO
             # Expand Administration menu
-            dispatcher.utter_message("🔎 Clicando no menu 'Administração' para expandir...")
             admin_font = WebDriverWait(driver_global, 10).until(
                 EC.presence_of_element_located((By.ID, "Fnt_mmManager"))
             )
@@ -118,7 +119,6 @@ class ActionRestaurarConfig670LV1(Action):
                 EC.presence_of_element_located((By.ID, "smSysMgr"))
             )
             driver_global.execute_script("arguments[0].click();", sys_mgr_font)
-            dispatcher.utter_message("✅ Administração de sistema clicado")
 
             # Click Default Configuration Management
             dispatcher.utter_message("🧾 Clicando em 'Gerenciamento de configuração padrão'...")
