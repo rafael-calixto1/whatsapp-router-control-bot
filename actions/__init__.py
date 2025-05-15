@@ -22,3 +22,6 @@ from .configurar_670v9 import (
 )
 
 from .resetar_670lv1 import ActionRestaurarConfig670LV1
+
+
+from .resetar_dir_615_t3 import ActionRestaurarConfigDir615T3

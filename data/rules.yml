@@ -26,3 +26,9 @@ rules:
   steps:
   - intent: configurar_670v9
   - action: action_configurar_670v9_inicio
+
+
+- rule: Reset DIR-615 T3 Router
+  steps:
+  - intent: resetar_dir_615_t3
+  - action: action_resetar_dir_615_t3

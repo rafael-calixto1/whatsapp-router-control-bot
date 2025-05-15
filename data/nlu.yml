@@ -4,6 +4,7 @@ nlu:
 - synonym: 670V9
   examples: |
       - v9
+      - 670 v9
 
 - synonym: 670LV1
   examples: |
@@ -15,93 +16,20 @@ nlu:
       - reset
       - resete
 
-
 - synonym: config
   examples: |
       - configurar
       - configuração
+      
 
-- intent: greet
+- synonym: DIR-615-T3
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+      - 615 t3
+      - dir 615
+      - dir 615 t3
+      -dlink 615
+      
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
 
 - intent: bot_challenge
   examples: |
@@ -146,4 +74,16 @@ nlu:
     - resetar lv1
     - resetar v1
 
+
+- intent: resetar_dir_615_t3
+  examples: |
+    - quero resetar o DIR-615-T3
+    - resetar o DIR-615-T3
+    - pode fazer o reset do DIR-615-T3?
+    - reset do DIR-615-T3
+    - DIR-615-T3 resetar
+    - reset DIR-615-T3
+    - resetar DIR-615-T3
+    - reset DIR-615-T3
+    - resetar DIR-615-T3
 

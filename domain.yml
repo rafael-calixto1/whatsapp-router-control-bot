@@ -11,6 +11,7 @@ intents:
   - resetar_670v9
   - configurar_670v9
   - resetar_670lv1
+  - resetar_dir_615_t3
 
 
 responses:
@@ -55,6 +56,7 @@ actions:
   - action_configurar_670v9_finalizar
   - action_ler_sinal_optico
   - action_restaurar_config_670lv1
+  - action_resetar_dir_615_t3
 
 session_config:
   session_expiration_time: 60
