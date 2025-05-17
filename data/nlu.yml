@@ -87,3 +87,20 @@ nlu:
     - reset DIR-615-T3
     - resetar DIR-615-T3
 
+- intent: remover_senha_670v1
+  examples: |
+    - quero remover a senha do 670v1
+    - remover a senha do 670v1
+    - pode remover a senha do 670v1?
+    - senha do 670v1
+    - 670v1 remover senha
+    - remover senha 670v1
+    - tirar senha do 670v1
+    - tirar a senha do 670v1
+    - pode tirar a senha do 670v1?
+    - deixar o wifi aberto do 670v1
+    - deixar o wifi sem senha do 670v1
+    - wifi aberto 670v1
+    - wifi sem senha 670v1
+    - wifi 670v1
+

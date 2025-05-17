@@ -12,6 +12,7 @@ intents:
   - configurar_670v9
   - resetar_670lv1
   - resetar_dir_615_t3
+  - remover_senha_670v1
 
 
 responses:
@@ -57,6 +58,12 @@ actions:
   - action_ler_sinal_optico
   - action_restaurar_config_670lv1
   - action_resetar_dir_615_t3
+  - action_remover_senha_670v1_inicio
+  - action_remover_senha_670v1_login
+  - action_remover_senha_670v1_navegar_menu
+  - action_remover_senha_670v1_configurar_wifi1
+  - action_remover_senha_670v1_configurar_wifi2
+  - action_remover_senha_670v1_finalizar
 
 session_config:
   session_expiration_time: 60

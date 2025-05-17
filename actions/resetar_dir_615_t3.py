@@ -111,7 +111,7 @@ class ActionRestaurarConfigDir615T3(Action):
             alert = WebDriverWait(driver_global, 10).until(EC.alert_is_present())
             alert_text = alert.text
             dispatcher.utter_message(f"📋 Confirmação: {alert_text}")
-            alert.accept()cl
+            alert.accept()
             
             time.sleep(5)
             dispatcher.utter_message("⏳ Aguardando restauração finalizar...")

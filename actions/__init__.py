@@ -23,5 +23,13 @@ from .configurar_670v9 import (
 
 from .resetar_670lv1 import ActionRestaurarConfig670LV1
 
-
 from .resetar_dir_615_t3 import ActionRestaurarConfigDir615T3
+
+from .remover_senha_670v1 import (
+    ActionRemoverSenha670v1Inicio,
+    ActionRemoverSenha670v1Login,
+    ActionRemoverSenha670v1NavegarMenu,
+    ActionRemoverSenha670v1ConfigurarWifi1,
+    ActionRemoverSenha670v1ConfigurarWifi2,
+    ActionRemoverSenha670v1Finalizar,
+)
